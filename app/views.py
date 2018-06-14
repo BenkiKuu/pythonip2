@@ -6,7 +6,7 @@ def news(news_id):
     '''
     Views news page function that returns the news articles page and its data
     '''
-    return render_template('news.html',id = news_id, title = id 
+    return render_template('news.html',id = news_id, title = id )
 
 #views
 @app.route('/')
