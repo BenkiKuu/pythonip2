@@ -5,7 +5,7 @@ from .models import news
 News = news.News
 
 #Getting api api
-api_key = app,config['NEWS_API_KEY']
+api_key = app.config['NEWS_API_KEY']
 
 
 #Getting the news base url
@@ -17,7 +17,7 @@ def get_news(category):
     '''
     get_news_url = base_url.format(category,api_key)
 
-    with urllib.request,urlopen(get_news_url) as url:
+    with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
 
