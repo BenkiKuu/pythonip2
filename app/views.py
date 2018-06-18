@@ -19,8 +19,10 @@ def index():
 
 
 @app.route('/news/<int:news_id>')
-def news(news_id):
+def news(id):
     '''
     Views news page function that returns the news articles page and its data
     '''
-    return render_template('news.html',id = news_id, title = id )
+    new = get_news(id)
+    title = f'{new.name}'
+    return render_template('news.html', title = title, new = new )
