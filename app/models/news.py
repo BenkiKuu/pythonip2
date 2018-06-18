@@ -6,8 +6,7 @@ class News:
         self.id = id
         self.name = name
         self.description = description
-        self.url = http://abcnews.go.com
+        self.url = url
         self.category = category
         self.language = language
         self.country = country
-        
