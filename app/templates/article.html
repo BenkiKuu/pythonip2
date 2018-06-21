@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content%}
+    {% for article_row in article %}
+
+<div class="continer-fluid">
+        <div class="col-md-4 panel-default">
+                <a href="{{article_row.url}}">
+                    <img src="{{article_row.image}}" alt="{{article_row.title}}" class="img-responsive" styles="height:30px">
+                </a>
+                <div class="caption">
+                    <h4><a href="{{article_row.url}}" target="_blank">{{article_row.title |truncate(35)}}</a></h4>
+                    <p>{{article.description | truncate(80)}}</p>
+                    <a href="{{article_row.url}}" target="_blank"> Read More</a>
+                </div>
+                <div class="footer">
+                    Published at: {{article_row.date}}
+                </div>
+
+    </div>
+</div>
+
+    {% endfor %}
+
+{%endblock%}
