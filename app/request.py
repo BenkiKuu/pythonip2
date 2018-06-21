@@ -1,8 +1,8 @@
 import urllib.request,json
-from .models import Sources, News_Article
+from .models import Sources, Article
 
 # Movie = movie.Movie
-News_Articles = News_Article
+Articles = Article
 # Getting api key
 api_key = None
 
@@ -32,8 +32,8 @@ def get_sources(category):
 
         sources_results = None
 
-        if get_sources_response['results']:
-            sources_results_list = get_sources_response['results']
+        if get_sources_response['sources']:
+            sources_results_list = get_sources_response['sources']
             sources_results = process_results(sources_results_list)
     return sources_results
 def process_results(source_list):
@@ -47,7 +47,7 @@ def process_results(source_list):
         source_results : A list of source objects
     '''
     sources_results = []
-    for sources_item in sources_list:
+    for sources_item in source_list:
         id = sources_item.get('id')
         name = sources_item.get('name')
         description = sources_item.get('description')
